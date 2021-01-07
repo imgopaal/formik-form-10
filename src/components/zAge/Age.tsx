@@ -4,8 +4,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import * as Yup from "yup";
-import Button from '@material-ui/core/Button';
-
+import Button from "@material-ui/core/Button";
+import "./age.css";
 
 export const Age = ({ submit }: any) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -23,17 +23,27 @@ export const Age = ({ submit }: any) => {
           submit(0);
         }}
       >
-        <Form>
-          <span>Date of birth </span>
-          <DatePicker
-            required
-            placeholderText="MM-DD-YYYY"
-            selected={selectedDate}
-            onChange={(date: any) => setSelectedDate(date)}
-          />
-          <div role="group" aria-labelledby="my-radio-group">
-            <ErrorMessage name="picked" >
-            { msg => <div style={{ color: 'red' }}>{msg}</div> }
+        <Form className="ageCont">
+          <div
+            style={{
+              display: "flex",
+              textAlign: "center",
+              alignItems: "center",
+            }}
+          >
+            <p style={{ width: "45%", fontSize: "20px" }}>Date of Birth: </p>
+            <DatePicker
+              required
+              className="myDatePicker"
+              placeholderText="MM-DD-YYYY"
+              selected={selectedDate}
+              onChange={(date: any) => setSelectedDate(date)}
+            />
+          </div>
+          <div className="genderPicker" role="group" aria-labelledby="my-radio-group">
+            <p>Gender: </p>
+            <ErrorMessage name="picked">
+              {(msg) => <div style={{ color: "red" }}>{msg}</div>}
             </ErrorMessage>
             <label>
               <Field type="radio" name="picked" value="Male" />
@@ -47,8 +57,8 @@ export const Age = ({ submit }: any) => {
           </div>
 
           <Button type="submit" variant="contained" color="primary">
-        Submit
-      </Button>
+            Submit
+          </Button>
         </Form>
       </Formik>
     </div>

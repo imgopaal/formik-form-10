@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "00001a",
     },
     backButton: {
-      backgroundColor: "00001a",
       marginRight: theme.spacing(1),
     },
     instructions: {
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function getSteps() {
-  return ["Basic Information", "Password", "Age"];
+  return ["Basic Information", "Security", "Details"];
 }
 
 function getStepContent(
