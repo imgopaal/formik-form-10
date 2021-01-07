@@ -7,13 +7,15 @@ import StepLabel from "@material-ui/core/StepLabel";
 // import Typography from "@material-ui/core/Typography";
 import { BasicInfo } from "../components/Basic Info/BasicInfo";
 import { Password } from "../components/password/Password";
-import  {Age} from "../components/zAge/Age";
+import { Age } from "../components/zAge/Age";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
+      backgroundColor: "00001a",
     },
     backButton: {
+      backgroundColor: "00001a",
       marginRight: theme.spacing(1),
     },
     instructions: {
@@ -27,14 +29,17 @@ function getSteps() {
   return ["Basic Information", "Password", "Age"];
 }
 
-function getStepContent(stepIndex: number,setStep: React.Dispatch<React.SetStateAction<number>>) {
+function getStepContent(
+  stepIndex: number,
+  setStep: React.Dispatch<React.SetStateAction<number>>
+) {
   switch (stepIndex) {
     case 0:
-      return <BasicInfo submit={setStep}/>;
+      return <BasicInfo submit={setStep} />;
     case 1:
-      return <Password submit={setStep}/>;
+      return <Password submit={setStep} />;
     case 2:
-      return <Age submit={setStep}/>;
+      return <Age submit={setStep} />;
     default:
       return "Unknown stepIndex";
   }
@@ -54,7 +59,7 @@ export default function HorizontalLabelPositionBelowStepper() {
           </Step>
         ))}
       </Stepper>
-      {getStepContent(activeStep,setActiveStep)}
+      {getStepContent(activeStep, setActiveStep)}
     </div>
   );
 }

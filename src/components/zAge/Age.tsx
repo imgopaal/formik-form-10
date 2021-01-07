@@ -1,45 +1,11 @@
-// import React, { useState } from "react";
-// import RadioButton from "../Radio";
-// import "./age.css";
-// import { Formik, Field, Form, ErrorMessage } from "formik";
-// import * as Yup from "yup";
-
-// const Age = ({ submit }: any) => {
-//   const [selectedDate, setSelectedDate] = useState(null);
-//   return (
-//     <div className="age">
-//       <div className="ageCont">
-//         <Formik
-//           initialValues={{ date: "", gender: "" }}
-//           validationSchema={Yup.object({
-//             date: Yup.string().required("Required"),
-//             gender: Yup.string().required("Required"),
-//           })}
-//           onSubmit={() => {
-//             submit(3);
-//           }}
-//         >
-//         </Formik>
-
-//         <RadioButton />
-//         <button type="submit">Sign Up</button>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Age;
-
 import React, { useState } from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
+import * as Yup from "yup";
+import Button from '@material-ui/core/Button';
 
-// export const Age = ({ submit }: any) => (
-//   //  const [selectedDate, setSelectedDate]= useState(null);
-//   return(
-
-// );
 
 export const Age = ({ submit }: any) => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -49,6 +15,9 @@ export const Age = ({ submit }: any) => {
         initialValues={{
           picked: "",
         }}
+        validationSchema={Yup.object({
+          picked: Yup.string().required("Gender Required"),
+        })}
         onSubmit={(values, { setSubmitting }) => {
           Swal.fire("Sign up Successful", "You can login now", "success");
           submit(0);
@@ -57,11 +26,15 @@ export const Age = ({ submit }: any) => {
         <Form>
           <span>Date of birth </span>
           <DatePicker
+            required
             placeholderText="MM-DD-YYYY"
             selected={selectedDate}
             onChange={(date: any) => setSelectedDate(date)}
           />
           <div role="group" aria-labelledby="my-radio-group">
+            <ErrorMessage name="picked" >
+            { msg => <div style={{ color: 'red' }}>{msg}</div> }
+            </ErrorMessage>
             <label>
               <Field type="radio" name="picked" value="Male" />
               Male
@@ -70,9 +43,12 @@ export const Age = ({ submit }: any) => {
               <Field type="radio" name="picked" value="Female" />
               Female
             </label>
+            <br />
           </div>
 
-          <button type="submit">Submit</button>
+          <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
         </Form>
       </Formik>
     </div>

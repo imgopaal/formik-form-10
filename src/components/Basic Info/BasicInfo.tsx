@@ -1,7 +1,11 @@
 import React from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 import "./basicInfo.css";
+import Button from '@material-ui/core/Button';
+
+import { TextField } from 'formik-material-ui';
+
 
 export const BasicInfo = ({submit}:any) => {
   return (
@@ -24,13 +28,16 @@ export const BasicInfo = ({submit}:any) => {
     >
       <Form className="mainCont">
         <div className="cont">
-          <Field placeholder="First Name"  name="firstName" type="text" />
-          <ErrorMessage name="firstName" />
-          <Field placeholder="Last Name" name="lastName" type="text" />
-          <ErrorMessage name="lastName" />
-          <Field placeholder="Email" name="email" type="email" />
-          <ErrorMessage name="email" />
-          <button type="submit">Next</button>
+          <Field component={TextField} placeholder="First Name" name="firstName" type="text" />
+          {/* <ErrorMessage name="firstName" /> */}
+          <Field component={TextField} placeholder="Last Name" name="lastName" type="text" />
+          {/* <ErrorMessage name="lastName" /> */}
+          <Field component={TextField} placeholder="Email" name="email" type="email" />
+          {/* <ErrorMessage name="email" /> */}
+          {/* <button type="submit">Next</button> */}
+          <Button type="submit" variant="contained" color="primary">
+        Primary
+      </Button>
         </div>
       </Form>
     </Formik>

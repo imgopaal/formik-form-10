@@ -1,12 +1,14 @@
 import React from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-// import './address.css'
+import Button from '@material-ui/core/Button';
+
+import { TextField } from 'formik-material-ui';
 
 export const Password = ({ submit }: any,{ values, errors, handleSubmit, handleChange, handleBlur }:any) => {
   const Schema = Yup.object().shape({
     password: Yup.string().required("This field is required").min(6,"Too Short"),
-    repeatPassword: Yup.string().when("password", {
+    repeatPassword: Yup.string().required("This field is required").when("password", {
       is: (submit: any) => (submit && submit.length > 0 ? true : false),
       then: Yup.string().oneOf(
         [Yup.ref("password")],
@@ -24,18 +26,20 @@ export const Password = ({ submit }: any,{ values, errors, handleSubmit, handleC
     >
       <Form className="mainCont">
         <div className="cont">
-          <Field placeholder="Password" name="password" type="password" />
-          <ErrorMessage name="password" />
+          <Field placeholder="Password" component={TextField} name="password" type="password" />
+
+          {/* <ErrorMessage name="password" /> */}
           <Field
             placeholder="Repeat Password"
             name="repeatPassword"
             type="password"
-            // onBlur={handleBlur}
-            //   onChange={handleChange}
-              // value={values.repeatPassword}
+            component={TextField}
+            
           />
-          <ErrorMessage  name="repeatPassword" />
-          <button type="submit">Next</button>
+          {/* <button type="submit">Next</button> */}
+          <Button variant="contained" type="submit" color="primary">
+  Primary
+</Button>
         </div>
       </Form>
     </Formik>

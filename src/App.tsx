@@ -1,10 +1,12 @@
-import React from 'react';
-import './App.css';
-import HorizontalLabelPositionBelowStepper from './stepper/Stepper';
+import React from "react";
+import "./App.css";
+import HorizontalLabelPositionBelowStepper from "./stepper/Stepper";
 function App() {
   return (
     <div className="App">
-      <HorizontalLabelPositionBelowStepper/>
+      <div className="stepper">
+        <HorizontalLabelPositionBelowStepper />
+      </div>
     </div>
   );
 }
