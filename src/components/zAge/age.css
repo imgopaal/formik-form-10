@@ -1,0 +1,15 @@
+.age{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.ageCont {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: center;
+  background-color: green;
+}
+
