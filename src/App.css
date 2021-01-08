@@ -14,7 +14,7 @@
 footer {
   color: white;
   font-size: 18px;
-  top: 0px;
+  bottom: 0px;
   margin: 0;
   width: 100%;
   margin: auto;
@@ -27,7 +27,7 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: #ffbcb0;
+  color: #ffd0c8;
   align-items: center;
   text-align: center;
   /* border-bottom: black 3px solid; */
@@ -35,8 +35,19 @@ footer a {
 @media screen and (max-width: 768px) {
 .App{
   width: 95%;
+  margin-top: 50px;
+  max-width: 320px;
+  border-radius: 0px 0px 20px 20px;
+
 }
 .stepper{
   width: 100%;
+}
+footer{
+  top:0%;
+  bottom: 92%;
+  margin-bottom: 20px;
+  background: linear-gradient(to left, #ad5389, #3c1053);
+
 }
 }
