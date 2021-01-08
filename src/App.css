@@ -7,9 +7,36 @@
   /* height: 100%; */
   margin: 5% auto;
   border-radius: 0px 0px 50px 50px;
-
+}
+.stepper {
+  width: 100%;
+}
+footer {
+  color: white;
+  font-size: 20px;
+  bottom: 0px;
+  margin: 0;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  padding: 0;
+  background: linear-gradient(to left, #ad5389, #3c1053);
+}
+footer a {
+  text-decoration: none;
+  color: rgb(201, 201, 201);
+  align-items: center;
+  text-align: center;
+  /* border-bottom: black 3px solid; */
+}
+@media screen and (max-width: 768px) {
+.App{
+  width: 95%;
 }
 .stepper{
-  /* background-color: rgb(0, 0, 22); */
   width: 100%;
+}
 }

@@ -36,7 +36,7 @@ export const BasicInfo = ({submit}:any) => {
           {/* <ErrorMessage name="email" /> */}
           {/* <button type="submit">Next</button> */}
           <Button type="submit" variant="contained" color="primary">
-        Primary
+        Next
       </Button>
         </div>
       </Form>

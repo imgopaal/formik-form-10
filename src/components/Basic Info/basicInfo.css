@@ -16,3 +16,9 @@
     text-align: center;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 768px) {
+.cont{
+    width: 70%;
+}
+}

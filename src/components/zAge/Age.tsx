@@ -40,10 +40,14 @@ export const Age = ({ submit }: any) => {
               onChange={(date: any) => setSelectedDate(date)}
             />
           </div>
-          <div className="genderPicker" role="group" aria-labelledby="my-radio-group">
+          <div
+            className="genderPicker"
+            role="group"
+            aria-labelledby="my-radio-group"
+          >
             <p>Gender: </p>
             <ErrorMessage name="picked">
-              {(msg) => <div style={{ color: "red" }}>{msg}</div>}
+              {(msg) => <div className="ageErrorCont">{msg}</div>}
             </ErrorMessage>
             <label>
               <Field type="radio" name="picked" value="Male" />
@@ -57,7 +61,7 @@ export const Age = ({ submit }: any) => {
           </div>
 
           <Button type="submit" variant="contained" color="primary">
-            Submit
+            SIGN UP
           </Button>
         </Form>
       </Formik>

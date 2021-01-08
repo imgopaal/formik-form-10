@@ -38,7 +38,7 @@ export const Password = ({ submit }: any,{ values, errors, handleSubmit, handleC
           />
           {/* <button type="submit">Next</button> */}
           <Button variant="contained" type="submit" color="primary">
-  Primary
+  Next
 </Button>
         </div>
       </Form>
