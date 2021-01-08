@@ -13,8 +13,8 @@
 }
 footer {
   color: white;
-  font-size: 20px;
-  bottom: 0px;
+  font-size: 18px;
+  top: 0px;
   margin: 0;
   width: 100%;
   margin: auto;
@@ -27,7 +27,7 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: rgb(201, 201, 201);
+  color: #ffbcb0;
   align-items: center;
   text-align: center;
   /* border-bottom: black 3px solid; */
